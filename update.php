@@ -24,7 +24,7 @@ if(isset($_POST['submit'])){
     if($image->error == 0){ 
         $sqlUpdate = "UPDATE `biglibrary` SET `image`='$image->fileName',`title`='$title',`ISBN`='$ISBN',`short_description`='$short_description',`type`='$type',`author_name`='$author_name',`publisher_name`='$publisher_name',`publisher_address`='$publisher_address',`publish_date`='$publish_date' WHERE id = $id";
 
-        if($product['image'] == "product.jpg"){
+        if($product['image'] != "product.jpg"){
             unlink("pictures/{$product['image']}");
         }
     } else {
